@@ -88,3 +88,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+
+/* Desactivar el uso de FTP para actualizar Plugins y Themes en WordPress */
+define('FS_METHOD','direct');

@@ -49,3 +49,16 @@ if ( version_compare( phpversion(), COLIBRI_THEME_REQUIRED_PHP_VERSION, '>=' ) )
 } else {
 	add_action( 'admin_notices', 'colibriwp_php_version_notice' );
 }
+
+function button_totop() {                 
+  wp_enqueue_script( 'custom-script', get_stylesheet_directory_uri() . '/js/back-to-top.js', array( 'jquery' ) );                    
+}       
+                
+add_action( 'wp_enqueue_scripts', 'button_totop' );       
+               
+function add_button_totop() {       
+                
+  echo '<a href="#" id="topbutton"></a>';       
+                
+}       
+add_action( 'wp_footer', 'add_button_totop' );
